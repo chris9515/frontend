@@ -18,7 +18,7 @@ function Login() {
 			username: username1,
 			password: password1
 		}
-      axios.post(`http://localhost:5000/login`,cred)
+      axios.post(`https://damp-depths-74405.herokuapp.com/login`,cred)
       .then( res =>{
         if (res.data){//if the details entered are valid , user gets logged in successfully
 			const user = {

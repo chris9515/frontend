@@ -14,7 +14,7 @@ const NowShowing = () => {
     }
 
     useEffect(() => { //loads the data from movies database
-        axios.get('http://localhost:5000/movie')
+        axios.get('https://damp-depths-74405.herokuapp.com/movie')
             .then(data => {
                 console.log(data)
                 setMovies(data.data);

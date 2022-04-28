@@ -26,7 +26,7 @@ const MovieList = (props) => {
 		setCurrentReviewID(movieID);
 		setMovie(movie);
 		// console.log(movie);
-		fetch(`http://localhost:5000/search/${movieID}`)
+		fetch(`https://damp-depths-74405.herokuapp.com/search/${movieID}`)
 		.then(response => {
 			return response.json();
 		})
@@ -38,7 +38,7 @@ const MovieList = (props) => {
 		e.preventDefault();
 		// console.log(props.movies)
 		// let currentMovie = props.movies.find(movie => movie.id === currentReviewID)
-		let currentMovie = await fetch(`http://localhost:5000/search/${currentReviewID}`)
+		let currentMovie = await fetch(`https://damp-depths-74405.herokuapp.com/search/${currentReviewID}`)
 		.then(response => {
 			return response.json();
 		})
@@ -48,7 +48,7 @@ const MovieList = (props) => {
 		
 		if(currentMovie.movieReviews){//if there are already previous reviews by the users then the new review is added to the list
 			currentMovie.movieReviews.push(review)
-			fetch(`http://localhost:5000/search/${currentReviewID}`, {
+			fetch(`https://damp-depths-74405.herokuapp.com/search/${currentReviewID}`, {
 				method: 'PATCH',
 				headers: {'Content-Type':'application/json'},
 				body: JSON.stringify(currentMovie)
@@ -59,7 +59,7 @@ const MovieList = (props) => {
 				"movieReviews": []
 			}
 			newMovie.movieReviews.push(review)
-			fetch(`http://localhost:5000/search/${currentReviewID}`, {
+			fetch(`https://damp-depths-74405.herokuapp.com/search/${currentReviewID}`, {
 				method: 'PUT',
 				headers: {'Content-Type':'application/json'},
 				body: JSON.stringify(newMovie)

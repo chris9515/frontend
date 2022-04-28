@@ -19,7 +19,7 @@ const Home = () => {
     const [language, setLanguage] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/search`) 
+        fetch(`https://damp-depths-74405.herokuapp.com/search`) 
             .then(res => {
                 return res.json();
             })
@@ -30,7 +30,7 @@ const Home = () => {
     }, [searchValue]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/query/Search?Language=${language}&Genre=${genre}&Title=${searchValue}`)
+        fetch(`https://damp-depths-74405.herokuapp.com/query/Search?Language=${language}&Genre=${genre}&Title=${searchValue}`)
         .then(res => {
             return  res.json();
         })
@@ -41,7 +41,7 @@ const Home = () => {
     }, [genre, language, searchValue]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/Search`)
+        fetch(`https://damp-depths-74405.herokuapp.com/Search`)
         .then(res => {
             return res.json();
         })

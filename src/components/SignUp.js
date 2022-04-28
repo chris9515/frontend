@@ -20,7 +20,7 @@ function SignUp() {
       "password":password1,
     }
     if (username1.length > 0 & password1.length > 0){ //user details gets stored in the user database
-      axios.post(`http://localhost:5000/user`,User).then((res)=>{
+      axios.post(`https://damp-depths-74405.herokuapp.com/user`,User).then((res)=>{
         console.log("user created successfully")
         
       }).catch((err)=>{

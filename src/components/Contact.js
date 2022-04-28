@@ -20,7 +20,7 @@ function Contact() {
         "message":feedback,
        }
       if (fname1.length > 3 & tel1.length > 5){
-        axios.post(`http://localhost:5000/feedback`,Feedback).then((res)=>{
+        axios.post(`https://damp-depths-74405.herokuapp.com/feedback`,Feedback).then((res)=>{
           console.log("Feedback submitted successfully")
           history("/home")
         }).catch((err)=>{
