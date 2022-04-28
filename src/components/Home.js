@@ -41,7 +41,7 @@ const Home = () => {
     }, [genre, language, searchValue]);
 
     useEffect(() => {
-        fetch(`https://damp-depths-74405.herokuapp.com/Search`)
+        fetch(`https://damp-depths-74405.herokuapp.com/search`)
         .then(res => {
             return res.json();
         })
